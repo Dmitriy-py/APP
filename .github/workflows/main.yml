@@ -1,0 +1,13 @@
+name: Build and Call Deploy
+
+on:
+  push:
+    branches:
+      - main # При пуше в main запускаем деплой
+
+jobs:
+  call-our-devops:
+    # Обращаемся к нашему Dev_Ops репозиторию!
+    uses: Dmitriy-py/Dev_Ops/.github/workflows/deploy.yml@main
+    with:
+      target_env: 'production'
